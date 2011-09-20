@@ -61,4 +61,10 @@ Watchdog::Application.configure do
   config.action_mailer.default_url_options = { :host => 'http://watchdogapp.heroku.com/' }
   
   ENV["REDISTOGO_URL"] ||= 'redis://localhost:6789'
+  
+  config.action_mailer.smtp_settings = {
+    :address => ENV['MAILGUN_HOST'],
+    :password => ENV['MAILGUN_PASSWORD'],
+    :user_name => ENV['MAILGUN_USERNAME']
+  }
 end
