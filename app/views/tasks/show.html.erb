@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @task.name %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @task.url %>
+</p>
+
+<p>
+  <b>Css selector:</b>
+  <%= @task.css_selector %>
+</p>
+
+<p>
+  <b>Api key:</b>
+  <%= @task.api_key %>
+</p>
+
+<p>
+  <b>Frequency:</b>
+  <%= @task.frequency %>
+</p>
+
+<p>
+  <b>Extract number:</b>
+  <%= @task.extract_number %>
+</p>
+
+<p>
+  <b>Threshold:</b>
+  <%= @task.threshold %>
+</p>
+
+<p>
+  <b>Running:</b>
+  <%= @task.running %>
+</p>
+
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>

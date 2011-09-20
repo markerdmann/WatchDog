@@ -1,0 +1,67 @@
+<%= form_for(@task, :html => {:class => 'form-stacked'}) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="clearfix">
+    <%= f.label "Task name" %>
+    <div class="input">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label "URL to check" %>
+    <div class="input">
+      <%= f.text_field :url %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <a href="http://www.selectorgadget.com/" target="_blank">
+      <label for='css_selector'>CSS Selector</label>
+    </a>
+    <div class="input">
+      <%= f.text_field :css_selector %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label :api_key %>
+    <div class="input">
+      <%= f.text_field :api_key %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label "Check how often?" %>
+    <div class="input">
+      Every <%= f.text_field :frequency, :width => '10px' %> hours
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label "Are we dealing with numbers?" %>
+    <div class="input">
+      <%= f.check_box :extract_number %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label "Notify me if the value exceeds:" %>
+    <div class="input">
+      <%= f.text_field :threshold %>
+    </div>
+  </div>
+  <div class="clearfix">
+    <%= f.label "Start immediately?" %>
+    <div class="input">
+      <%= f.check_box :running %>
+    </div>
+  </div>
+  <div>
+    <%= f.submit(:class => "btn large primary") %>
+  </div>
+<% end %>

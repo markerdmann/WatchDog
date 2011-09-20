@@ -1,0 +1,27 @@
+<h2 style="margin: 10px;">Sign in</h2>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name),
+             :html => {:class => 'form-stacked'}) do |f| %>
+  <div class="clearfix">
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="clearfix">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="clearfix">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+  <div>
+    <%= f.submit("Sign in", :class => "btn large primary") %>
+  </div>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

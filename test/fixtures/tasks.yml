@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  url: MyString
+  css_selector: MyString
+  api_key: MyString
+  frequency: 1.5
+  extract_number: false
+  threshold: 1.5
+
+two:
+  name: MyString
+  url: MyString
+  css_selector: MyString
+  api_key: MyString
+  frequency: 1.5
+  extract_number: false
+  threshold: 1.5
