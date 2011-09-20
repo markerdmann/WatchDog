@@ -10,6 +10,9 @@ namespace :resque do
     ENV['QUEUE'] = '*'
     
     Resque.redis = REDIS
+    
+    # fix for strange hanging issue on Heroku... maybe a Resque+postgres bug?
+    Resque.before_fork = Proc.new { ActiveRecord::Base.establish_connection }
 
     # The schedule doesn't need to be stored in a YAML, it just needs to
     # be a hash.  YAML is usually the easiest.
