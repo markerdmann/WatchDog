@@ -58,5 +58,7 @@ Watchdog::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
   
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'http://watchdogapp.heroku.com/' }
+  
+  ENV["REDISTOGO_URL"] ||= 'redis://localhost:6789'
 end
