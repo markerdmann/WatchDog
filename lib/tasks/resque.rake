@@ -7,6 +7,8 @@ namespace :resque do
     require 'resque_scheduler'
     require 'resque/scheduler'      
 
+    ENV['QUEUE'] = '*'
+    
     # you probably already have this somewhere
     Resque.redis = REDIS
 
