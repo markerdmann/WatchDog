@@ -29,6 +29,13 @@ Watchdog::Application.configure do
   config.assets.debug = true
   
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  mailgun_config = YAML.load_file('config/mailgun.yml')
+  config.action_mailer.smtp_settings = {
+    :address => mailgun_config['host'],
+    :password => mailgun_config['password'],
+    :user_name => mailgun_config['username']
+  }
   
   ENV["REDISTOGO_URL"] = 'redis://localhost'
+  
 end

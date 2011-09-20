@@ -18,7 +18,7 @@ class Runner
       end
       Resque.enqueue_in(task.frequency.to_f.hours, Runner, task_id)
     rescue => e
-      REDIS.set('error', [e, e.backtrace].to_json)
+      REDIS.set('error', [e.inspect, e.backtrace].to_json)
     end
   end
 end
