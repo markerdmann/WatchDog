@@ -30,5 +30,5 @@ Watchdog::Application.configure do
   
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   
-  ENV["REDISTOGO_URL"] = 'redis://localhost:6789'
+  ENV["REDISTOGO_URL"] = 'redis://localhost'
 end
