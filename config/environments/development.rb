@@ -34,4 +34,6 @@ Watchdog::Application.configure do
     :password => '1$n-s860s0y9',
     :user_name => 'postmaster@mark.mailgun.org'
   }
+  
+  ENV["REDISTOGO_URL"] = 'redis://localhost:6789'
 end
