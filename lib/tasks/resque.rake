@@ -31,3 +31,6 @@ namespace :resque do
     #Resque::Scheduler.dynamic = true
   end
 end
+
+desc "Alias for resque:work (To run workers on Heroku)"
+task "jobs:work" => "resque:work"
