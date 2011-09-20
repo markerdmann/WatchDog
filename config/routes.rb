@@ -6,7 +6,7 @@ Watchdog::Application.routes.draw do
   end
 
   get "home/index"
-  root :to => 'home#index'
+  root :to => 'tasks#index'
   devise_for :users
 
   # The priority is based upon order of creation:
