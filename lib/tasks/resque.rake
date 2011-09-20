@@ -2,12 +2,14 @@ require 'resque/tasks'
 require 'resque_scheduler/tasks'
 
 namespace :resque do
-  task :setup do
+  task :setup => :environment do
     require 'resque'
     require 'resque_scheduler'
     require 'resque/scheduler'      
 
     ENV['QUEUE'] = '*'
+    
+    Resque.redis = REDIS
 
     # The schedule doesn't need to be stored in a YAML, it just needs to
     # be a hash.  YAML is usually the easiest.
